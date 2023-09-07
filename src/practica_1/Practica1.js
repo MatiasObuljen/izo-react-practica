@@ -1,12 +1,12 @@
 // TODO 0 - Instalar el proyecto con "npm install"
 
 // TODO 1 - Importar productos
-const products = []; 
+const products = {}//import("./products.json");
 
 const filterSmartphones = (products) => {
-    //TODO 2.1 - Filtrar utilizando
+    //products.filter(products.category === "smartphone")
 
-	return products;
+	//return products;
 }
 const returnProductName = (products) => {
     //TODO 3.1 - Usar template literals
@@ -20,7 +20,8 @@ const calcQuantity = (products) => {
 }
 export default function Practica1 () {
     // TODO 2 - Filtrar productos donde sean "category" igual a "smartphone"
-	let smartphones = filterSmartphones(products);
+	let smartphones = filterSmartphones();
+    //console.log(filterSmartphones())
     // TODO 3 - Armar un arreglo de nombres de productos con "marca" y "nombre". 
     let nameArray = returnProductName(smartphones);
     // TODO 4 - Calcular el precio total de los teléfonos filtrados
