@@ -1,7 +1,5 @@
-export default function Body( { pageBody } ) {
+export default function Body ({ body }) {
     return (
-        <div>
-            { pageBody }
-        </div>
+        <div>{ body }</div>
     )
 }

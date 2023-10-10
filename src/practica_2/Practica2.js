@@ -1,27 +1,25 @@
-import Site from "./Site.json"
-import Title from "./Components/Title";
-import Body from "./Components/Body";
-import Header from "./Components/Header";
-import Main from "./Components/Main";
 
-export default function Practica2 () {
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Page from "./components/Page";
 
-const links =
-    {
-        1:'Google.com',
-        2:'Facebook.com'
-    }
-
+export default function Practica2 () { // APP
+    const site = {
+        pageTitle: 'Unidad 1.2 - Práctica',
+        pageBody: 'Implementación de árbol de componentes y propiedades en React.'
+    };
     return (
         <div>
-            <Header>
-                <Title pageTitle = {Site.pageTitle}/>
-            </Header>
-            <Main links = {links}>
-                <Body pageBody = {Site.pageBody}/>
-            </Main>
-
+            <Page>
+                <Header pageTitle={site.pageTitle} />
+                <Main 
+                    pageBody={site.pageBody} 
+                    links={[
+                        'https://google.com.ar',
+                        'https://institutozonaoeste.edu.ar/'
+                    ]}
+                />
+            </Page>
         </div>
-
     );
 }

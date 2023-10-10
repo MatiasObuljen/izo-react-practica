@@ -6,6 +6,7 @@ import MainContent from './MainContent';
 
 function App() {
   const [practiceSelected, setPracticeSelected] = useState('#practica_1');
+  // JSX
   return (
     <div>
       <Menu onOptionSelected={(t) => { setPracticeSelected(t) }} />
