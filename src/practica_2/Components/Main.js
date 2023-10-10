@@ -8,18 +8,20 @@ export default function Main ({ pageBody, links }) {
                 <ul>
                     { links.map((link) => (
                         <li>
-                            <a href="{ link }">{ link }</a>
+                            <a href={ link }>{ link }</a>
                         </li>
                     ))}
+                    <br/>
+                    <br/>
                 </ul>
             </nav>
             <div className="main-body">
                 <Body body={pageBody} />
             </div>
-            <p>Frase a elección</p>
+            <p>El patrimonio neto es igual a la suma de los activos más los resultados positivos</p>
             <BlogPost 
-                title={'Newells: Heinze le dio un fuerte respaldo a Guillermo Ortiz y encendió la polémica'}
-                body={'El DT dijo que "es uno de los mejores centrales del fútbol argentino" con el afán de bancarlo y, quizás, centrar las críticas en su figura'}
+                title={'Aburrida cita de sábado'}
+                body={'Como de costumbre, el canalla se impuso sobre la lepra'}
             />
         </main>
     )

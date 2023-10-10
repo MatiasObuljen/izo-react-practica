@@ -3,6 +3,7 @@
 // TODO 1 - Importar productos
 import products from './products.json';
 
+
 const filterSmartphones = (products) => {
     //TODO 2.1 - Filtrar utilizando
 
@@ -16,9 +17,7 @@ const returnProductName = (products) => {
 const calcTotalPrice = (products) => {
 	return products.reduce((subtotal, product) => subtotal + product.price, 0);
 }
-const calcQuantity = (products) => {
-	return products.length;
-}
+const calcQuantity = (products) => { return products.length }
 export default function Practica1 () {
     // TODO 2 - Filtrar productos donde sean "category" igual a "smartphone"
 	let smartphones = filterSmartphones(products);

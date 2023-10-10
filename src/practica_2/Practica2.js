@@ -1,7 +1,6 @@
-
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Page from "./components/Page";
+import Header from "./Components/Header";
+import Main from "./Components/Main";
+import Page from "./Components/Page";
 
 export default function Practica2 () { // APP
     const site = {
@@ -15,10 +14,11 @@ export default function Practica2 () { // APP
                 <Main 
                     pageBody={site.pageBody} 
                     links={[
-                        'https://google.com.ar',
-                        'https://institutozonaoeste.edu.ar/'
+                        'https://ideasweb.com.ar/',
+                        'https://www.youtube.com/watch?v=AaDqiBHNtvA&themeRefresh=1'
                     ]}
                 />
+
             </Page>
         </div>
     );
