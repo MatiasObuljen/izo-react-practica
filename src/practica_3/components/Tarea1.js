@@ -4,14 +4,18 @@ export default function Tarea1 () {
     const [array, setArray] = useState([])
     const [nuevo, setNuevo] = useState("")
     const [input, setInput] = useState("")
-    const [disabled, setDisabled] = useState(true)
     const [guardadito, setGuardadito] = useState(false)
+    const [editarIndex, setEditarIndex] = useState(-1)
 
     const onChangeButton = (event) =>{
         setNuevo(event.target.value)
     }
     const onChangeInput = (event) =>{
-        setInput(event.target.value)
+        setArray((prevArray) => {
+            const newArray = [...prevArray];
+            newArray[editarIndex] = event.target.value;
+            return newArray;
+        });
     }
     const onClickButton = () =>{
         let newArray = [...array, nuevo]
@@ -21,31 +25,38 @@ export default function Tarea1 () {
         let newArray = [...array]
         newArray.splice(index,1)
         setArray(newArray)
-        guardadito(false)
+        setGuardadito(false)
     } 
-    const handleEditar = (index) =>{
-        setDisabled(false)
+    const handleEditar = (index, event) =>{
+        setEditarIndex(index)
         setGuardadito(true)
-    } 
+        setInput(array[index])
+    }
+    const handleGuardar = (event) =>{
+    setGuardadito(false);
+    setEditarIndex(-1)
+    }
 
     return (
         <>
         <input type="text" onChange={onChangeButton}></input>
         <button onClick={onClickButton}>Botón</button><br/><br/>
-        <label>ARRAY CREADO:{JSON.stringify(array)}</label>
-        {array.map ((element, index)=>{
-            let valueDef = element.replace(',','.')
+        <label>ARRAY CREADO:</label>
+        {array.map ((element, index)=> {
+            let valueDef = element.replace(',','.').replace('','+')
             return(
                 <div key={index}>
                     <ul>
                         {isNaN(valueDef) &&
                         <>
                          <li>
-                            <input  type="text" value={valueDef} onChange={onChangeInput} disabled={disabled}/>
+                            <input type="text"
+                                   value={index === editarIndex ? array[editarIndex] : element}
+                                   onChange={onChangeInput}
+                                   disabled={editarIndex !== index}/>
                             <button onClick={() => handleBorrar(index)}>Borrar</button>
                             <button onClick={() => handleEditar(index)}>Editar</button>
-                            {guardadito? <button onClick={() => handleEditar(index)}>Guardar</button>: null }
-                            
+                            { editarIndex === index && guardadito? <button onClick={() => handleGuardar()}>Guardar</button>: null }
                          </li>
                          
                          </>
