@@ -27,7 +27,6 @@ export default function Practica1 () {
     let total = calcTotalPrice(smartphones);
     // TODO 5 - Calcular la cantidad de productos
     let quantity = calcQuantity(smartphones);
-    console.log(nameArray);
     if (!Array.isArray(nameArray)) {
         nameArray = [];
     }
